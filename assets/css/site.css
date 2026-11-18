@@ -1,0 +1,99 @@
+/* LT Real Estate — estilos base del sitio.
+   Los estilos de cada sección están en línea en el HTML (copiados del diseño).
+   Aquí van las clases compartidas, estados y ajustes para móvil. */
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#09090B;color:#EDEBF3;font-family:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{max-width:100%}
+a{color:#6352F0;text-decoration:none}
+a:hover{color:#4A3AD6}
+button{font-family:inherit}
+[hidden]{display:none !important}
+:focus-visible{outline:2px solid #8E80FF;outline-offset:2px}
+
+.r{font-family:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif}
+.mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
+.gridbg{background-image:linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);background-size:64px 64px}
+
+/* Botones y enlaces */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 22px;border-radius:10px;background:#6352F0;color:#FFFFFF;font-weight:600;font-size:15px;border:0;cursor:pointer;font-family:inherit;text-decoration:none}
+.btn:hover{background:#7262FF;color:#FFFFFF}
+.btn[disabled]{background:#ECECF0;color:#5B5967;cursor:not-allowed}
+.btn-gd{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 22px;border-radius:10px;border:1px solid rgba(255,255,255,0.22);color:#EDEBF3;font-weight:500;font-size:15px}
+.btn-gd:hover{border-color:rgba(255,255,255,0.5);color:#FFFFFF}
+.btn-gl{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 22px;border-radius:10px;border:1px solid rgba(11,11,15,0.18);color:#0B0B0F;font-weight:500;font-size:15px}
+.btn-gl:hover{border-color:#0B0B0F;color:#0B0B0F}
+.nav{color:#D2CFDB;font-size:14px;font-weight:500;padding:12px 0}
+.nav:hover{color:#FFFFFF}
+.lk-dk{color:#C9C2FF;font-weight:600;font-size:15px}
+.lk-dk:hover{color:#FFFFFF}
+.lk-lt{color:#6352F0;font-weight:600;font-size:15px}
+.lk-lt:hover{color:#3B2BC4}
+.foot{color:#9C99A8;font-size:14px}
+.foot:hover{color:#FFFFFF}
+.chip,.opt{cursor:pointer;font-family:inherit}
+
+/* Campos de formulario */
+.field{width:100%;min-height:48px;padding:12px 14px;border-radius:10px;font-family:inherit;font-size:16px}
+.field-dk{border:1px solid rgba(255,255,255,0.16);background:#15151A;color:#EDEBF3}
+.field-lt{border:1px solid rgba(11,11,15,0.18);background:#FFFFFF;color:#0B0B0F}
+.field:focus{outline:2px solid #8E80FF;outline-offset:1px}
+.field[aria-invalid="true"]{border-color:#E5484D}
+.hp{position:absolute !important;left:-9999px !important;width:1px;height:1px;overflow:hidden}
+.form-error{margin:0;font-size:14px;color:#FF9592}
+.form-error-lt{color:#C62A2F}
+.legal{margin:0;font-size:12px;line-height:1.5;color:#8B8898}
+.legal a{color:inherit;text-decoration:underline}
+
+/* Chips de selección (estado lo maneja JS con aria-pressed) */
+.sel{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:999px;font-size:14px;cursor:pointer;font-family:inherit}
+.sel-lt{background:#FFFFFF;color:#0B0B0F;border:1px solid rgba(11,11,15,0.18)}
+.sel-lt[aria-pressed="true"]{background:#0B0B0F;color:#FFFFFF;border-color:#0B0B0F}
+.sel-lt.sel-accent[aria-pressed="true"]{background:#6352F0;border-color:#6352F0}
+.sel-dk{background:transparent;color:#EDEBF3;border:1px solid rgba(255,255,255,0.2)}
+.sel-dk[aria-pressed="true"]{background:#6352F0;color:#FFFFFF;border-color:#6352F0}
+.sel .count{opacity:.55}
+
+/* Tarjetas de perfil en Evaluar */
+.role{display:flex;flex-direction:column;gap:4px;width:100%;min-height:76px;padding:16px;border-radius:12px;background:#F5F5F7;color:#0B0B0F;border:1px solid #F5F5F7;text-align:left;cursor:pointer;font-family:inherit}
+.role .desc{font-size:13px;color:#5B5967}
+.role[aria-pressed="true"]{background:#0B0B0F;color:#FFFFFF;border-color:#0B0B0F}
+.role[aria-pressed="true"] .desc{color:#B9B6C4}
+
+/* Placeholders pendientes de completar */
+.ph{border-bottom:1px dashed currentColor}
+
+/* Menú móvil */
+.nav-mobile-only{display:none !important}
+.menu-btn{display:none;align-items:center;gap:8px;min-height:44px;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:#EDEBF3;font-size:14px;font-weight:500;cursor:pointer}
+
+@media (max-width:960px){
+  .bento{grid-template-columns:minmax(0,1fr) !important}
+  .bento > *{grid-column:auto !important}
+  .dash{grid-template-columns:minmax(0,1fr) !important}
+  .dash-side{display:none !important}
+  .dash-main{grid-template-columns:minmax(0,1fr) !important}
+}
+
+@media (max-width:900px){
+  .site-hdr{position:relative}
+  .site-nav{display:none !important}
+  .site-nav.open{display:flex !important;flex-direction:column;gap:0 !important;position:absolute;top:100%;left:12px;right:12px;z-index:50;padding:8px 18px;background:#111114;border:1px solid rgba(255,255,255,0.12);border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+  .site-nav.open a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .site-nav.open a:last-child{border-bottom:0}
+  .site-nav.open .nav-mobile-only{display:block !important;color:#C9C2FF;font-weight:600}
+  .menu-btn{display:inline-flex}
+  .hdr-login{display:none !important}
+}
+
+@media (max-width:640px){
+  .pipe{grid-template-columns:repeat(5,minmax(118px,1fr)) !important;overflow-x:auto;padding-bottom:6px}
+  .distrib{grid-template-columns:minmax(0,1fr) !important;gap:14px !important}
+  .distrib-line{display:none !important}
+  .hdr-cta{display:none !important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}

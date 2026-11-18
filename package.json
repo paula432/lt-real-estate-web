@@ -1,0 +1,6 @@
+{
+  "name": "lt-real-estate-web",
+  "private": true,
+  "description": "Sitio de LT Real Estate (estático + función /api/lead para GoHighLevel)",
+  "engines": { "node": ">=18" }
+}
