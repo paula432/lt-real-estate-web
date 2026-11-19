@@ -38,6 +38,10 @@ a:hover{color:#4A3AD6}
 .flt2{animation:flt 7s ease-in-out -2s infinite}
 .flt3{animation:flt 6.5s ease-in-out -4s infinite}
 @media (prefers-reduced-motion:reduce){.flt,.flt2,.flt3{animation:none}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-track{display:flex;gap:48px;align-items:center;animation:marquee 28s linear infinite;width:max-content}
+.marquee-track:hover{animation-play-state:paused}
+@media (max-width:640px){.rt-logo{max-width:220px!important}}
 </style>
 </head>
 <body>
@@ -53,15 +57,15 @@ a:hover{color:#4A3AD6}
 
 <header style="position:relative;z-index:3">
 <div style="max-width:1280px;margin:0 auto;padding:18px clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
-<a href="./" aria-label="LT Real Estate Marketing, inicio" style="display:flex;align-items:center;gap:14px">
-<img src="assets/img/lt-mark-white.png" alt="" style="height:34px;width:auto;display:block">
-<img src="assets/img/lt-wordmark-white.png" alt="" style="height:30px;width:auto;display:block">
+<a href="./" aria-label="LT Real Estate Marketing, inicio" style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+<img src="assets/img/lt-mark-white.png" alt="" style="height:34px;width:auto;display:block;flex-shrink:0;object-fit:contain">
+<img src="assets/img/lt-wordmark-white.png" alt="" style="height:30px;width:auto;display:block;flex-shrink:0;object-fit:contain">
 </a>
 <nav aria-label="Principal" style="display:flex;gap:30px;flex-wrap:wrap">
 <a class="nav" href="#servicios">Servicios</a>
 <a class="nav" href="#perfiles">Casos</a>
 <a class="nav" href="#proyectos">Proyectos</a>
-<a class="nav" href="#plataforma">Plataforma</a>
+<a class="nav" href="#plataforma">Tecnología</a>
 <a class="nav" href="#nosotros">Nosotros</a>
 <a class="nav" href="#podcast">Podcast</a>
 </nav>
@@ -84,60 +88,73 @@ a:hover{color:#4A3AD6}
 </section>
 
 <!-- ============ 2 · LT EN NÚMEROS (BLANCO) ============ -->
-<section id="numeros" style="background:#FFFFFF;color:#0B0B0F;padding:clamp(88px,10vw,140px) 0 clamp(56px,6vw,80px)">
-<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:48px">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:clamp(32px,5vw,72px);align-items:end">
-<div style="display:flex;flex-direction:column;gap:18px">
+<section id="numeros" style="background:#FFFFFF;color:#0B0B0F;padding:clamp(56px,7vw,96px) 0 clamp(40px,5vw,60px)">
+<div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:36px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:clamp(24px,4vw,56px);align-items:end">
+<div style="display:flex;flex-direction:column;gap:14px">
 <span class="mono" style="font-size:12px;letter-spacing:.14em;color:#6352F0">LT EN NÚMEROS</span>
-<h2 style="margin:0;font-size:clamp(40px,5vw,72px);line-height:.98;letter-spacing:-0.045em;font-weight:600;text-wrap:balance">La efectividad no tiene fronteras.</h2>
+<h2 style="margin:0;font-size:clamp(32px,4vw,54px);line-height:.98;letter-spacing:-0.045em;font-weight:600;text-wrap:balance">La efectividad no tiene fronteras.</h2>
 </div>
-<p style="margin:0;font-size:18px;line-height:1.6;color:#4A4855;max-width:540px">Vender no es suerte: es un tema de números y probabilidades. Medimos cada lead, cada llamada y cada visita, y lo que se mide se puede mejorar.</p>
+<p style="margin:0;font-size:17px;line-height:1.6;color:#4A4855;max-width:540px">Vender no es suerte: es un tema de números y probabilidades. Medimos cada lead, cada llamada y cada visita, y lo que se mide se puede mejorar.</p>
 </div>
 
-<div style="display:flex;flex-direction:column;gap:14px">
-<div style="display:flex;flex-wrap:wrap;gap:14px">
-<div style="flex:2 1 560px;min-height:340px;position:relative;overflow:hidden;border-radius:22px;background:linear-gradient(135deg,#6352F0 0%,#3B2BC4 100%);color:#FFFFFF;padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:2 1 420px;min-height:240px;position:relative;overflow:hidden;border-radius:18px;background:linear-gradient(135deg,#6352F0 0%,#3B2BC4 100%);color:#FFFFFF;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;justify-content:space-between;gap:18px">
 <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.28) 1.6px,transparent 2.2px);background-size:16px 16px;-webkit-mask-image:linear-gradient(110deg,transparent 35%,#000 95%);mask-image:linear-gradient(110deg,transparent 35%,#000 95%)"></div>
 <span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#DCD7FF">UNIDADES</span>
-<div style="position:relative;display:flex;flex-direction:column;gap:8px">
-<span style="font-size:clamp(96px,11vw,168px);font-weight:600;letter-spacing:-0.065em;line-height:.85">+350</span>
-<span style="font-size:clamp(20px,1.8vw,26px);font-weight:500;color:#EDEAFF">unidades comercializadas</span>
+<div style="position:relative;display:flex;flex-direction:column;gap:6px">
+<span style="font-size:clamp(72px,8vw,120px);font-weight:600;letter-spacing:-0.065em;line-height:.85">+350</span>
+<span style="font-size:clamp(17px,1.5vw,21px);font-weight:500;color:#EDEAFF">unidades comercializadas</span>
 </div>
 </div>
-<div style="flex:1 1 260px;min-height:340px;border-radius:22px;background:#0B0B0F;color:#EDEBF3;padding:clamp(28px,3vw,36px);display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+<div style="flex:1 1 200px;min-height:240px;border-radius:18px;background:#0B0B0F;color:#EDEBF3;padding:clamp(22px,2.5vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:18px">
 <span class="mono" style="font-size:11px;letter-spacing:.12em;color:#9C99A8">PROYECTOS</span>
-<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:clamp(72px,7vw,104px);font-weight:600;letter-spacing:-0.06em;line-height:.9">+40</span><span style="font-size:18px;color:#B9B6C4">proyectos inmobiliarios</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(56px,6vw,80px);font-weight:600;letter-spacing:-0.06em;line-height:.9">+40</span><span style="font-size:16px;color:#B9B6C4">proyectos inmobiliarios</span></div>
 </div>
 </div>
-<div style="display:flex;flex-wrap:wrap;gap:14px">
-<div style="flex:1 1 260px;min-height:340px;border-radius:22px;background:#F5F5F7;padding:clamp(28px,3vw,36px);display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1 1 200px;min-height:200px;border-radius:18px;background:#F5F5F7;padding:clamp(22px,2.5vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:18px">
 <span class="mono" style="font-size:11px;letter-spacing:.12em;color:#5B5967">PAÍSES</span>
-<div style="display:flex;flex-direction:column;gap:14px">
-<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:clamp(72px,7vw,104px);font-weight:600;letter-spacing:-0.06em;line-height:.9">+5</span><span style="font-size:18px;color:#4A4855">países activos</span></div>
-<div style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:5px 9px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">Costa Rica</span><span style="padding:5px 9px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">México</span><span style="padding:5px 9px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">Argentina</span><span style="padding:5px 9px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">USA</span><span style="padding:5px 9px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">República Dominicana</span></div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(56px,6vw,80px);font-weight:600;letter-spacing:-0.06em;line-height:.9">+5</span><span style="font-size:16px;color:#4A4855">países activos</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:4px 8px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">Costa Rica</span><span style="padding:4px 8px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">México</span><span style="padding:4px 8px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">Argentina</span><span style="padding:4px 8px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">USA</span><span style="padding:4px 8px;border-radius:999px;background:#FFFFFF;font-size:12px;color:#4A4855">Rep. Dominicana</span></div>
 </div>
 </div>
-<div style="flex:1 1 260px;min-height:300px;border-radius:22px;background:#F5F5F7;padding:clamp(28px,3vw,36px);display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+<div style="flex:1 1 200px;min-height:200px;border-radius:18px;background:#F5F5F7;padding:clamp(22px,2.5vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:18px">
 <span class="mono" style="font-size:11px;letter-spacing:.12em;color:#5B5967">EQUIPOS</span>
-<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:clamp(72px,7vw,104px);font-weight:600;letter-spacing:-0.06em;line-height:.9">+12</span><span style="font-size:18px;color:#4A4855">equipos de ventas alineados</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(56px,6vw,80px);font-weight:600;letter-spacing:-0.06em;line-height:.9">+12</span><span style="font-size:16px;color:#4A4855">equipos de ventas alineados</span></div>
 </div>
-<div style="flex:1 1 260px;min-height:300px;border-radius:22px;background:#0B0B0F;color:#EDEBF3;padding:clamp(28px,3vw,36px);display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+<div style="flex:1 1 200px;min-height:200px;border-radius:18px;background:#0B0B0F;color:#EDEBF3;padding:clamp(22px,2.5vw,30px);display:flex;flex-direction:column;justify-content:space-between;gap:18px">
 <span class="mono" style="font-size:11px;letter-spacing:.12em;color:#9C99A8">BROKERS</span>
-<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:clamp(72px,7vw,104px);font-weight:600;letter-spacing:-0.06em;line-height:.9;color:#C9C2FF">+25</span><span style="font-size:18px;color:#B9B6C4">brokers entrenados</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:clamp(56px,6vw,80px);font-weight:600;letter-spacing:-0.06em;line-height:.9;color:#C9C2FF">+25</span><span style="font-size:16px;color:#B9B6C4">brokers entrenados</span></div>
+</div>
 </div>
 </div>
 
+<div style="padding-top:32px;border-top:1px solid rgba(11,11,15,0.1);overflow:hidden">
+<span class="mono" style="display:block;font-size:11px;letter-spacing:.14em;color:#5B5967;margin-bottom:20px">CONFÍAN EN LT</span>
+<div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)">
+<div class="marquee-track">
+<img loading="lazy" decoding="async" src="assets/img/logo-fomento.png" alt="Fomento Urbano" style="height:26px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-fraxioned.png" alt="Fraxioned" style="height:22px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-urbania.png" alt="Urbania" style="height:19px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-terra.png" alt="Terra Quintas" style="height:26px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-amari.png" alt="Amari Tulum" style="height:28px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-namaste.png" alt="Namasté Bacalar" style="height:34px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-bn.png" alt="Banco Nacional" style="height:26px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-wework.png" alt="WeWork" style="height:26px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<!-- duplicado para loop continuo -->
+<img loading="lazy" decoding="async" src="assets/img/logo-fomento.png" alt="" aria-hidden="true" style="height:26px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-fraxioned.png" alt="" aria-hidden="true" style="height:22px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-urbania.png" alt="" aria-hidden="true" style="height:19px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-terra.png" alt="" aria-hidden="true" style="height:26px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-amari.png" alt="" aria-hidden="true" style="height:28px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-namaste.png" alt="" aria-hidden="true" style="height:34px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-bn.png" alt="" aria-hidden="true" style="height:26px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
+<img loading="lazy" decoding="async" src="assets/img/logo-wework.png" alt="" aria-hidden="true" style="height:26px;width:auto;flex-shrink:0;filter:brightness(0);opacity:.6">
 </div>
-
-<div style="display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;padding-top:40px;border-top:1px solid rgba(11,11,15,0.1)">
-<span class="mono" style="font-size:11px;letter-spacing:.14em;color:#5B5967">CONFÍAN EN LT</span>
-<img loading="lazy" decoding="async" src="assets/img/logo-fomento.png" alt="Fomento Urbano" style="height:28px;width:auto;filter:brightness(0);opacity:.6">
-<img loading="lazy" decoding="async" src="assets/img/logo-fraxioned.png" alt="Fraxioned" style="height:24px;width:auto;filter:brightness(0);opacity:.6">
-<img loading="lazy" decoding="async" src="assets/img/logo-urbania.png" alt="Urbania" style="height:20px;width:auto;filter:brightness(0);opacity:.6">
-<img loading="lazy" decoding="async" src="assets/img/logo-terra.png" alt="Terra Quintas" style="height:28px;width:auto;filter:brightness(0);opacity:.6">
-<img loading="lazy" decoding="async" src="assets/img/logo-amari.png" alt="Amari Tulum" style="height:30px;width:auto;filter:brightness(0);opacity:.6">
-<img loading="lazy" decoding="async" src="assets/img/logo-namaste.png" alt="Namasté Bacalar" style="height:38px;width:auto;filter:brightness(0);opacity:.6">
-<img loading="lazy" decoding="async" src="assets/img/logo-bn.png" alt="Banco Nacional" style="height:28px;width:auto;filter:brightness(0);opacity:.6">
+</div>
 </div>
 </div>
 </section>
@@ -506,23 +523,11 @@ a:hover{color:#4A3AD6}
 <span class="mono" style="font-size:12px;letter-spacing:.14em;color:#B3AAFF">EN COMERCIALIZACIÓN</span>
 <h2 style="margin:0;font-size:clamp(36px,4.4vw,60px);line-height:1.02;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Proyectos que estamos comercializando hoy.</h2>
 </div>
-<p style="margin:0;font-size:18px;line-height:1.6;color:#B9B6C4;max-width:520px">Desarrollos activos en Costa Rica y República Dominicana, de lotes a unidades de lujo.</p>
+<p style="margin:0;font-size:18px;line-height:1.6;color:#B9B6C4;max-width:520px">Desarrollos activos en Costa Rica, República Dominicana y Argentina.</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:14px">
 <article style="background:#111114;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
-<div data-photo="Terra Quintas" style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
-<div aria-hidden="true" class="gridbg" style="position:absolute;inset:0"></div>
-<span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">TERRA QUINTAS</span></span>
-<span style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:12px;color:#9FE8C4"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#3DDC97;display:block"></span>En venta</span>
-<span class="mono" style="position:absolute;right:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:11px;color:#D2CFDB">CR</span>
-</div>
-<div style="padding:24px 26px 26px;display:flex;flex-direction:column;gap:18px;flex:1">
-<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">Terra Quintas</span><span style="font-size:15px;color:#B9B6C4">Lotes · Bagaces, Guanacaste</span></div>
-<div style="margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><span class="mono" style="font-size:11px;color:#9C99A8">DESDE</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">US$50.000</span></div>
-</div>
-</article>
-<article style="background:#111114;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
-<div data-photo="Nimbu" style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
+<div style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
 <div aria-hidden="true" class="gridbg" style="position:absolute;inset:0"></div>
 <span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">NIMBU</span></span>
 <span style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:12px;color:#9FE8C4"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#3DDC97;display:block"></span>En venta</span>
@@ -534,31 +539,19 @@ a:hover{color:#4A3AD6}
 </div>
 </article>
 <article style="background:#111114;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
-<div data-photo="Uruka Point" style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
+<div style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
 <div aria-hidden="true" class="gridbg" style="position:absolute;inset:0"></div>
-<span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">URUKA POINT</span></span>
+<span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">REEF &amp; GOLF</span></span>
 <span style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:12px;color:#9FE8C4"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#3DDC97;display:block"></span>En venta</span>
-<span class="mono" style="position:absolute;right:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:11px;color:#D2CFDB">CR</span>
+<span class="mono" style="position:absolute;right:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:11px;color:#D2CFDB">RD</span>
 </div>
 <div style="padding:24px 26px 26px;display:flex;flex-direction:column;gap:18px;flex:1">
-<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">Uruka Point</span><span style="font-size:15px;color:#B9B6C4">San José</span></div>
-<div style="margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><span class="mono" style="font-size:11px;color:#9C99A8">DESDE</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">US$210.000</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">Reef &amp; Golf</span><span style="font-size:15px;color:#B9B6C4">Unidades de lujo · Cap Cana, Rep. Dominicana</span></div>
+<div style="margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><span class="mono" style="font-size:11px;color:#9C99A8">DESDE</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">US$485.000</span></div>
 </div>
 </article>
 <article style="background:#111114;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
-<div data-photo="El Canal" style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
-<div aria-hidden="true" class="gridbg" style="position:absolute;inset:0"></div>
-<span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">EL CANAL</span></span>
-<span style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:12px;color:#9FE8C4"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#3DDC97;display:block"></span>En venta</span>
-<span class="mono" style="position:absolute;right:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:11px;color:#D2CFDB">CR</span>
-</div>
-<div style="padding:24px 26px 26px;display:flex;flex-direction:column;gap:18px;flex:1">
-<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">El Canal</span><span style="font-size:15px;color:#B9B6C4">Apartamentos · Grecia, Alajuela</span></div>
-<div style="margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><span class="mono" style="font-size:11px;color:#9C99A8">DESDE</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">US$250.000</span></div>
-</div>
-</article>
-<article style="background:#111114;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
-<div data-photo="Selva Coral" style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
+<div style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
 <div aria-hidden="true" class="gridbg" style="position:absolute;inset:0"></div>
 <span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">SELVA CORAL</span></span>
 <span style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:12px;color:#9FE8C4"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#3DDC97;display:block"></span>En venta</span>
@@ -570,15 +563,39 @@ a:hover{color:#4A3AD6}
 </div>
 </article>
 <article style="background:#111114;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
-<div data-photo="Reef & Golf" style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
+<div style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
 <div aria-hidden="true" class="gridbg" style="position:absolute;inset:0"></div>
-<span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">REEF &AMP; GOLF</span></span>
+<span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">EL CANAL</span></span>
 <span style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:12px;color:#9FE8C4"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#3DDC97;display:block"></span>En venta</span>
-<span class="mono" style="position:absolute;right:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:11px;color:#D2CFDB">RD</span>
+<span class="mono" style="position:absolute;right:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:11px;color:#D2CFDB">CR</span>
 </div>
 <div style="padding:24px 26px 26px;display:flex;flex-direction:column;gap:18px;flex:1">
-<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">Reef &amp; Golf</span><span style="font-size:15px;color:#B9B6C4">Unidades de lujo · Cap Cana</span></div>
-<div style="margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><span class="mono" style="font-size:11px;color:#9C99A8">DESDE</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">US$485.000</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">El Canal</span><span style="font-size:15px;color:#B9B6C4">Apartamentos · Grecia, Alajuela</span></div>
+<div style="margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><span class="mono" style="font-size:11px;color:#9C99A8">DESDE</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">US$250.000</span></div>
+</div>
+</article>
+<article style="background:#111114;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
+<div style="position:relative;height:240px;overflow:hidden">
+<img loading="lazy" decoding="async" src="assets/img/Velo-Nunciatura-SaballosArquitectos-Alvarofonseca-DepthLens-77.jpg" alt="Velo Nunciatura" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,9,11,0.5) 0%,transparent 60%)"></div>
+<span style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:12px;color:#9FE8C4"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#3DDC97;display:block"></span>En venta</span>
+<span class="mono" style="position:absolute;right:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:11px;color:#D2CFDB">CR</span>
+</div>
+<div style="padding:24px 26px 26px;display:flex;flex-direction:column;gap:18px;flex:1">
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">Velo</span><span style="font-size:15px;color:#B9B6C4">Apartamentos · Nunciatura, San José</span></div>
+<div style="margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><span class="mono" style="font-size:11px;color:#9C99A8">DESDE</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">US$145.000</span></div>
+</div>
+</article>
+<article style="background:#111114;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;display:flex;flex-direction:column">
+<div style="position:relative;height:240px;background:linear-gradient(150deg,#221E45 0%,#121218 75%);display:flex;align-items:center;justify-content:center">
+<div aria-hidden="true" class="gridbg" style="position:absolute;inset:0"></div>
+<span class="mono" style="position:relative;font-size:11px;letter-spacing:.12em;color:#8B8898;text-align:center;line-height:1.7">FOTO DEL PROYECTO<br><span style="color:#C9C2FF">MAKER NÚÑEZ</span></span>
+<span style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:12px;color:#9FE8C4"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:#3DDC97;display:block"></span>En venta</span>
+<span class="mono" style="position:absolute;right:16px;top:16px;padding:7px 10px;border-radius:999px;background:rgba(9,9,11,0.78);font-size:11px;color:#D2CFDB">AR</span>
+</div>
+<div style="padding:24px 26px 26px;display:flex;flex-direction:column;gap:18px;flex:1">
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">Maker Núñez</span><span style="font-size:15px;color:#B9B6C4">Argentina</span></div>
+<div style="margin-top:auto;display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08)"><span class="mono" style="font-size:11px;color:#9C99A8">DESDE</span><span style="font-size:26px;font-weight:600;letter-spacing:-0.03em">US$100.000</span></div>
 </div>
 </article>
 </div>
@@ -617,7 +634,7 @@ a:hover{color:#4A3AD6}
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:clamp(36px,6vw,88px);align-items:center">
 <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
 <span class="mono" style="font-size:12px;letter-spacing:.14em;color:#B3AAFF">NUESTRO PODCAST</span>
-<img loading="lazy" decoding="async" src="assets/img/real-talk-logo-web.png" alt="Real Talk, real estate podcast by LT" style="width:100%;max-width:560px;height:auto;display:block">
+<img loading="lazy" decoding="async" src="assets/img/real-talk-logo-web.png" alt="Real Talk, real estate podcast by LT" class="rt-logo" style="width:100%;max-width:560px;height:auto;display:block">
 </div>
 <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
 <p style="margin:0;font-size:clamp(20px,1.8vw,26px);line-height:1.4;letter-spacing:-0.01em;color:#EDEBF3;font-weight:500;text-wrap:pretty">Hablamos de real estate sin filtro: cómo se vende, cómo se invierte y qué hay detrás de cada proyecto.</p>
@@ -661,7 +678,7 @@ a:hover{color:#4A3AD6}
 <img loading="lazy" decoding="async" src="assets/img/lt-logo-stack-white.png" alt="LT Real Estate Marketing" style="width:160px;height:auto;display:block">
 <p style="margin:0;font-size:14px;line-height:1.55;color:#9C99A8;max-width:240px">Comercializadora inmobiliaria. Intención sobre volumen.</p>
 </div>
-<nav aria-label="Servicios" style="display:flex;flex-direction:column;gap:10px"><span class="mono" style="font-size:11px;color:#8B8898">SERVICIOS</span><a class="foot" href="#">Generación de leads</a><a class="foot" href="comercializacion.html">Comercialización</a><a class="foot" href="tecnologia.html">Sistema LT</a><a class="foot" href="#plataforma">LetsRealty</a></nav>
+<nav aria-label="Servicios" style="display:flex;flex-direction:column;gap:10px"><span class="mono" style="font-size:11px;color:#8B8898">SERVICIOS</span><a class="foot" href="#">Generación de leads</a><a class="foot" href="comercializacion.html">Comercialización</a><a class="foot" href="tecnologia.html">Tecnología</a><a class="foot" href="#plataforma">LetsRealty</a></nav>
 <nav aria-label="Empresa" style="display:flex;flex-direction:column;gap:10px"><span class="mono" style="font-size:11px;color:#8B8898">EMPRESA</span><a class="foot" href="#perfiles">Casos</a><a class="foot" href="#proyectos">Proyectos activos</a><a class="foot" href="#nosotros">Nosotros</a><a class="foot" href="#brochure">Brochure</a><a class="foot" href="#podcast">Podcast Real Talk</a></nav>
 <div style="display:flex;flex-direction:column;gap:10px"><span class="mono" style="font-size:11px;color:#8B8898">CONTACTO</span><a class="foot" href="#">WhatsApp <span style="color:#B3AAFF">[número]</span></a><a class="foot" href="https://www.instagram.com/ltrealestatemarketing">Instagram</a><a class="foot" href="https://www.linkedin.com/company/ltmarketingre">LinkedIn</a></div>
 </div>
