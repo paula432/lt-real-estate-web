@@ -71,7 +71,6 @@ a:hover{color:#4A3AD6}
 <a class="nav" href="#podcast">Podcast</a>
 </nav>
 <div style="display:flex;align-items:center;gap:20px">
-<a class="nav" href="#">Ingresar</a>
 <a class="btn" href="#brochure" style="min-height:44px;padding:11px 18px;font-size:14px">Descarga el brochure</a>
 </div>
 </div>
@@ -340,7 +339,7 @@ a:hover{color:#4A3AD6}
 
 <!-- ============ 7 · FRASE + FOTO + CTA ============ -->
 <section style="position:relative;overflow:hidden">
-<img loading="lazy" decoding="async" src="assets/img/fondo-frase.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%">
+<img loading="lazy" decoding="async" src="assets/img/fondo-frase.jpg" alt="" aria-hidden="true" data-parallax style="position:absolute;left:0;top:-15%;width:100%;height:130%;object-fit:cover;object-position:center 40%;will-change:transform">
 <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,9,11,0.9) 0%,rgba(9,9,11,0.6) 55%,rgba(9,9,11,0.25) 100%)"></div>
 <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(120px,14vw,200px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:28px">
 <h2 style="margin:0;font-size:clamp(44px,6vw,88px);line-height:.98;letter-spacing:-0.045em;font-weight:600;max-width:900px;text-wrap:balance">Nos medimos en ventas, <span style="color:#C9C2FF">no en clics.</span></h2>
@@ -590,7 +589,7 @@ a:hover{color:#4A3AD6}
 
 <!-- ============ 12 · BROCHURE (CONVERSIÓN PRINCIPAL) ============ -->
 <section id="brochure" style="position:relative;overflow:hidden">
-<img loading="lazy" decoding="async" src="assets/img/bitzu-cocina.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<img loading="lazy" decoding="async" src="assets/img/fondo-brochure.jpg" alt="" aria-hidden="true" data-parallax style="position:absolute;left:0;top:-15%;width:100%;height:130%;object-fit:cover;object-position:center;will-change:transform">
 <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(9,9,11,0.86)"></div>
 <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(88px,10vw,140px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:clamp(40px,6vw,88px);align-items:center">
 <div style="display:flex;flex-direction:column;gap:26px;min-width:0">
@@ -677,12 +676,20 @@ a:hover{color:#4A3AD6}
 </main>
 <script>
 (function(){
-  var bg = document.getElementById('hero-bg');
-  if(!bg || window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var els = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+  var hero = document.getElementById('hero-bg');
+  if(hero) els.push(hero);
+  if(!els.length) return;
   function onScroll(){
-    bg.style.transform = 'translateY(' + (window.scrollY * 0.38) + 'px)';
+    els.forEach(function(el){
+      var sec = el.closest('section') || el.parentElement;
+      var rect = sec.getBoundingClientRect();
+      el.style.transform = 'translateY(' + (-rect.top * 0.3) + 'px)';
+    });
   }
   window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
 })();
 </script>
 </body>
